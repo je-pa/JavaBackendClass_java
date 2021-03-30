@@ -15,7 +15,7 @@ public class ForMission8 {
 		
 		System.out.println("star = "+star);
 		
-		for(int i =0;i<star;i++) {
+		for(int i =star;i>0;i--) {
 			for(int j=1;j<=star;j++) {
 				/*if(j<star-i) {
 					System.out.print("_");
@@ -23,7 +23,7 @@ public class ForMission8 {
 					System.out.print("*");
 				}*/
 				
-				String item = (j<star-i)?"_":"*";
+				String item = (j<i)?"_":"*";
 				System.out.print(item);
 			}
 			System.out.println();
@@ -39,8 +39,27 @@ public class ForMission8 {
 			}
 			System.out.println();
 		}
-		/*
-		int j=0;
+		System.out.println();
+	
+		int j=1;
+		for(int i=0;i<=star;i++) {
+			if(i<star-j) {
+				System.out.print("_");
+			}else if(i<star) {
+				System.out.print("*");
+			}else {
+				if(j==star) {break;}
+				System.out.println();
+				j++;
+				i=-1;
+			}
+		}
+		
+	}
+}
+
+/*
+	 j=1;
 		for(int i=1;i<=star;i++) {
 			if(i<=j) {
 				System.out.print("*");
@@ -49,6 +68,5 @@ public class ForMission8 {
 				j++;
 				i=0;
 			}
-		}*/
-	}
-}
+		}
+*/
