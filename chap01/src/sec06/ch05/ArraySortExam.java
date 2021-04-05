@@ -5,15 +5,17 @@ import java.util.Arrays;
 public class ArraySortExam {
 	public static void main(String[] args) {
 		int[] arr = {88,65,23,1,900,42,95};
-		int temp;
+		
 		
 		for(int i=0;i<arr.length-1;i++) {
-			for(int z=i;z<arr.length;z++) {
-				if(arr[i]>arr[z]) {
-					temp=arr[i];
-					arr[i]=arr[z];
-					arr[z]=temp;
-				}
+			for(int z=i+1;z<arr.length;z++) {
+				int minIdx=i;
+				if(arr[minIdx]>arr[z]) {
+					minIdx=z;
+				}//저장된 방값과 i번째꺼 교환
+			int temp = arr[minIdx];
+			arr[minIdx]=arr[i];
+			arr[i]=temp;
 			}
 		}
 		
