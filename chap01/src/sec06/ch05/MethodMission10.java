@@ -24,5 +24,11 @@ public class MethodMission10 {
 		int[] menuPriceArr = {1000, 1200, 1300, 1500, 2000, 3000};
 		
 		printMenu2(menuNmArr, menuPriceArr);
+		boolean run =true;
+		while(run){
+			System.out.print("선택 > ");
+			int selectedNum = scan.nextInt();
+		}
+		System.out.println("끝");
 	}
 }
