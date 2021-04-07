@@ -28,6 +28,7 @@ public class MethodMission10 {
 		System.out.println(str);
 	}
 	
+	
 	public static void main(String[] args) {
 		Scanner scan =new Scanner(System.in);
 
