@@ -14,17 +14,21 @@ public class StaticExam4 {
 	}
 }
 
-class CalcStatic2{
-	
-	static int sum(int num1, int num2) {
-		return num1 + num2;
+class CalcStatic2{//거의 안씀
+	static int num1;
+	static int num2;
+	static int sum() {
+		return num1 + num2; 
 	}
 }
 
-class CalcInstance2 {
+class CalcInstance2 { //두개 매소드 비교
 	int num1;
 	int num2;
-	int sum() {
+	int sum() { // static 못씀
 		return num1+num2;
+	}
+	static int sum(int n1,int n2) { //static 사용가능
+		return n1+n2;
 	}
 }
