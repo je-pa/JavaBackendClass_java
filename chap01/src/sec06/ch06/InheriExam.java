@@ -13,20 +13,12 @@ public class InheriExam {
 class Animal{
 	String name;
 	int age;
-	
-	
-	
-	public Animal(String name, int age) {
-		super();
-		this.name = name;
-		this.age = age;
-	}
-
-
 
 	void howling() {
 		System.out.println("운다");
 	}
+	
+	
 }
 
 class Cat extends Animal{// cat 객체을 만들려 할때! animal을 만들려하고 
@@ -35,7 +27,7 @@ class Cat extends Animal{// cat 객체을 만들려 할때! animal을 만들려�
 					///	 반환은 object->animal->cat (stack영역에 쌓이기 때문)
 					//메소드는 cat에서 먼저 찾아보고 없으면 animal로 찾으러감/
 	Cat(){
-		super("'",0);
+		System.out.println("Cat 생성자");
 	}
 	
 	void lick() {
@@ -47,11 +39,15 @@ class Cat extends Animal{// cat 객체을 만들려 할때! animal을 만들려�
 		System.out.println("야옹");
 	}
 }
-/*
+
 class KoShort extends Cat{
 	
+	KoShort(){
+		super();
+		System.out.println("KoShort생성자");
+	}
 	
 	void pee() {
 		System.out.printf("%s가 소변을 본다 \n",name);
 	}
-}*/
+}
