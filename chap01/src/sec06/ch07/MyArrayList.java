@@ -8,30 +8,68 @@ public class MyArrayList implements MyList{
 	}
 	
 	@Override
-	public void add(int n) {
-		int[] arr2 = new int[arr.length+1];
+	public void add(int value) {
+		int[] temp = new int[arr.length+1];
 		for(int i=0;i<arr.length;i++) {
-			arr2[i]=arr[i];
+			temp[i]=arr[i];
 		}
-		arr2[arr.length]=n;
+		temp[arr.length]=value;
 		
-		arr=arr2;
-		
+		arr=temp;
+		/*
 		for(int v : arr) {
 			System.out.println(v);
+		}*/
+	}
+	@Override
+	public void add(int idx, int value) {
+		int[] temp = new int[arr.length+1];
+		for(int i=0;i<idx;i++) {
+			temp[i]=arr[i];
 		}
+		temp[idx]=value;
+		for(int i=idx;i<arr.length;i++) {
+			temp[i+1]=arr[i];
+		}
+		arr=temp;
 	}
 
 	@Override
 	public int size() {
 		
-		return 0;
+		return arr.length;
 	}
 
 	@Override
-	public int get(int n) {
+	public int get(int index) {
 		
-		return 0;
+		return arr[index];
 	}
-
+	
+	@Override
+	public int remove() {
+		int[] temp = new int[arr.length-1];
+		for(int i=0;i<arr.length-1;i++) {
+			temp[i]=arr[i];
+		}
+		int val=arr[arr.length-1];
+		arr=temp;
+		
+		return val;
+	}
+	
+	@Override
+	public int remove(int idx) {
+		int[] temp = new int[arr.length-1];
+		for(int i=0;i<arr.length-1;i++) {
+			if(i<idx) {
+				temp[i]=arr[i];
+			}else {
+				temp[i]=arr[i+1];
+			}
+		}
+		int val=arr[idx];
+		arr=temp;
+		return val;
+	}
 }
